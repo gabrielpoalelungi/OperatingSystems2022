@@ -1,0 +1,35 @@
+331CC - Poalelungi Gabriel - tema 1 SO - martie 2022
+
+- Am implementat toate directivele descrise in tema, in afara de urmatorul caz:
+    - Pentru directiva #include, daca fisierul header are alte directive in afara
+    de #define, nu vor fi procesate.
+
+- Cazul de multiple output files:
+    - Din ce am inteles, daca sunt mai multe fisiere de iesire, este luat ultimul => didn't work;
+    - Am abordat si astfel: daca sunt mai multe fisiere de iesire, ies din program => didn't work;
+
+- Am implementat hashtable-ul astfel:
+    - hashtable-ul este un vector alocat dinamic de elemente de tip "element"
+    - struct-ul "element" este un tip de date care stocheaza perechea key-value si
+    un pointer la urmatorul element de tip "element". Practic, fiecare valoare din hashtable
+    este o lista simplu inlantuita.
+    - hashcode-ul este unul basic in care se face suma patratelor caracterelor din key
+    - daca exista coliziune, se adauga in lista simplu inlantuita care face match pe hashcode;
+    - hashtable-ul are 3 functii: createHashTable, add (care se foloseste de createElement), delete;
+    - P.S: m-am inspirat din labul de SD din anul 1 (doar inspirat, nu copiat, I swear :)) )
+
+- Coding style:
+    - Am umblat cat am putut, dar eroarea de "too many tabs" ma omoara, asa ca m-am dat batut;
+
+- Makefile for windows:
+    - Am inteles ca trebuiau compilate toate fisierele sursa in fisiere obiect, si apoi toate linkate;
+    - Daca fac asta, apar erori pe care nici pe net nu le gasesc.
+    - Daca le compilez pe toate si fac direct so-cpp.exe, merge perfect;
+
+P.S: Ideea temei este foarte buna, dar am gasit 2 aspecte negative:
+    1) Faptul ca "cl" pe windows compileaza cu c89 este al naibii de frustrant;
+    2) Tema nu a fost suficient de documentata din punct de vedere al checker-ului;
+        - Daca un task dadea failed, il rulam local si mergea ok...dar el tot esua.
+        - Ar fi fost ideal ca testele sa fie un pic documentate, in sensul in care sa
+        stim ce testeaza de fapt si ce ar trebui sa apara la output;
+        - Probabil daca testele de referinta erau vizibile, ar fi fost mai ok.
